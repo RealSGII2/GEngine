@@ -1,0 +1,18 @@
+<Root>
+    <Head v="0.0.1" />
+
+    <Scene>
+        <Instance>
+            <TransformComponent Position="0, 0, 0" Rotation="0, 0, 0" />
+            <GeometryComponent geometry="./Meshes/LargeRect.geo" />
+        </Instance>
+        <Instance>
+            <TransformComponent Position="0, 1, 0" Rotation="0, 0, 0" />
+            <GeometryComponent geometry="./Meshes/SmallRect.geo" />
+        </Instance>
+    </Scene>
+
+    <SceneProperties>
+        <SceneBackground value="#f5deb3" />
+    </SceneProperties>
+</Root>
