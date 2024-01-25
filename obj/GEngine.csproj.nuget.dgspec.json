@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Source\\gengine\\GEngine\\GEngine.csproj": {}
+    "/home/wwise/Source/GEngine/GEngine.csproj": {}
   },
   "projects": {
-    "d:\\Source\\gengine\\GEngine\\GEngine.csproj": {
+    "/home/wwise/Source/GEngine/GEngine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Source\\gengine\\GEngine\\GEngine.csproj",
+        "projectUniqueName": "/home/wwise/Source/GEngine/GEngine.csproj",
         "projectName": "GEngine",
-        "projectPath": "d:\\Source\\gengine\\GEngine\\GEngine.csproj",
-        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "d:\\Source\\gengine\\GEngine\\obj\\",
+        "projectPath": "/home/wwise/Source/GEngine/GEngine.csproj",
+        "packagesPath": "/home/wwise/.nuget/packages/",
+        "outputPath": "/home/wwise/Source/GEngine/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/wwise/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -67,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,12 +7,12 @@ using GEngine.Engine.Assets.Attributes;
 
 namespace GEngine.Engine.Assets;
 
-public class DataReader<T> where T : IAsset
+public class AssetFile<T> where T : IAsset
 {
     public readonly Head Head;
     public readonly T Body;
 
-    public DataReader(string path)
+    public AssetFile(string path)
     {
         var document = new XmlDocument();
         document.Load(path);

@@ -1,0 +1,18 @@
+<Root>
+    <Head v="0.0.1" />
+
+    <Scene name="Main">
+        <Instance name="LargeRectangle">
+            <Transform Position="0, 0, 0" Rotation="0, 0, 0" />
+            <Geometry Source="/Meshes/LargeRect.geo" />
+        </Instance>
+        <Instance name="SmallRectangle">
+            <Transform Position="0, 1, 0" Rotation="0, 0, 0" />
+            <Geometry Source="/Meshes/SmallRect.geo" />
+        </Instance>
+    </Scene>
+
+    <SceneProperties>
+        <SceneBackground value="#f5deb3" />
+    </SceneProperties>
+</Root>

@@ -3,55 +3,40 @@ namespace GEngine.Demo;
 using GEngine.Engine.Graphics;
 using System.Drawing;
 using Silk.NET.Input;
-using Silk.NET.Maths;
-using Silk.NET.Windowing;
+using GEngine.Engine;
 
-public class Game
+public class MainGame
 {
-    public readonly IWindow GameWindow;
-    private readonly WindowOptions _windowOptions = WindowOptions.Default with
+    public readonly Game Game;
+
+    public MainGame()
     {
-        Size = new Vector2D<int>(800, 600),
-        Title = "Demo"
-    };
+        Game = new();
+        Game.KeyDown += OnKeyDown;
+        Game.Graphics.Ready += OnGraphicsReady;
 
-    private readonly GraphicsController _graphics;
-
-    public Game()
-    {
-        // Create the window.
-        GameWindow = Window.Create(_windowOptions);
-        GameWindow.Load += OnLoad;
-        
-        // Start graphics
-        _graphics = new(GameWindow);
-        _graphics.Ready += OnGraphicsReady;
-
-        // Start the game
-        GameWindow.Run();
+        Game.Start();
     }
 
     private void OnGraphicsReady()
     {
         // Render our graphics.
-        _graphics!.OpenGL.ClearColor(Color.Wheat);
+        Game.Graphics.OpenGL.ClearColor(Color.Wheat);
 
-        using GeometryRenderer renderer = new(_graphics!);
-        renderer.RenderGeometry(Meshes.BigRectangle);
-        renderer.RenderGeometry(Meshes.SmallRectangle);
-    }
-
-    private void OnLoad()
-    {
-        // Input
-        IInputContext input = GameWindow.CreateInput();
-        for (int i = 0; i < input.Keyboards.Count; i++)
-            input.Keyboards[i].KeyDown += OnKeyDown;
+        // TODO: Transition GeometryRenderer to use GeometryAsset
+        //       instead of Geometry (so we can remove Demo.Old)
+        using GeometryRenderer renderer = new(Game.Graphics);
+        renderer.RenderGeometry(Old.Meshes.BigRectangle);
+        renderer.RenderGeometry(Old.Meshes.SmallRectangle);
     }
 
     private void OnKeyDown(IKeyboard keyboard, Key key, int keyCode)
     {
-        if (key == Key.Escape)
-            GameWindow.Close();
+        switch(key)
+        {
+            case Key.Escape:
+                Game.Exit();
+                break;
+        }
     }
 }

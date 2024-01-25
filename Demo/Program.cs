@@ -4,6 +4,6 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Game _ = new();
+        MainGame _ = new();
     }
 }
